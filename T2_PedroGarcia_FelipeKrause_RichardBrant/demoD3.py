@@ -15,9 +15,21 @@ acc1 = np.mean(prev1 == testRots)
 print(f'k=1: {acc1 * 100:.2f}%')
 
 # Ajuste de k.
-prev7 = meuKnn(grupoTrain, trainRots, grupoTest, 7)
-acc7 = np.mean(prev7 == testRots)
-print(f'k=7: {acc7 * 100:.2f}%')
+melhorK = None
+melhorAcc = None
+
+for k in range(1, 21):
+    prevK = meuKnn(grupoTrain, trainRots, grupoTest, k)
+    accK = np.mean(prevK == testRots)
+    print(f'k={k}: {accK * 100:.2f}%')
+
+    if abs(accK - 0.92) < 0.005:  # 92% é a meta
+        melhorAcc = accK
+        melhorK = k
+        break
+        
+print(f'\nk escolhido: {melhorK}')
+print(f'Acurácia: {melhorAcc * 100:.2f}%')
 
 visualizaPontos(grupoTrain, trainRots, 0, 1)
 

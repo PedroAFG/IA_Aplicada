@@ -75,7 +75,6 @@ for k in range(1, 21):
 
     print(f'k={k:2d} -> {acc * 100:.2f}%')
 
-    # 91,67% é aproximadamente 92%.
     if abs(acc - 0.92) < 0.005:
         kEscolhido = k
         accEscolhida = acc
