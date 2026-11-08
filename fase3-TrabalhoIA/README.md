@@ -1,9 +1,10 @@
 # Trabalho 3 — Inteligência Artificial
 
-Este repositório contém a implementação completa do Trabalho 3 de Inteligência Artificial, dividido em duas partes:
+Este repositório contém a implementação do Trabalho 3 de Inteligência Artificial, organizado em três pastas:
 
 1. classificação de risco de crédito com **Gaussian Naïve Bayes**;
-2. classificação com **Árvores de Decisão** e **Random Forest**.
+2. classificação com **Árvores de Decisão** e **Random Forest**;
+3. **Regressão Logística** e **SVM**, incluindo as partes 3 e 4 do enunciado.
 
 Além dos notebooks resolvidos e executados, o projeto inclui versões completas em Python, bases pré-processadas, visualizações dos modelos e documentação de estudo para apresentação.
 
@@ -24,6 +25,13 @@ fase3-TrabalhoIA/
 │   ├── arvore_credit.png
 │   ├── matriz_confusao_arvore_credit.png
 │   └── matriz_confusao_random_forest.png
+├── Parte-3/
+│   ├── TRABALHO_3_RegressãoLogística_SVM.ipynb
+│   ├── TRABALHO_3_PARTE_3_Regressao_Logistica_SVM_RESOLVIDO.ipynb
+│   ├── trabalho_3_parte_3_regressao_logistica_svm.py
+│   ├── comparacao_modelos_credit.csv
+│   ├── matrizes_confusao_comparacao.png
+│   └── README.md
 ├── requirements.txt
 └── Documentacao-Estudo/
     ├── README.md
@@ -279,9 +287,17 @@ Em análise de crédito, o falso negativo da classe 1 é especialmente important
 - `Parte-2/matriz_confusao_arvore_credit.png`: matriz da árvore;
 - `Parte-2/matriz_confusao_random_forest.png`: matriz da Random Forest.
 
+## Parte 3 — Regressão Logística e SVM
+
+O arquivo original `Parte-3/TRABALHO_3_RegressãoLogística_SVM.ipynb` reúne as partes 3 e 4 do enunciado. Ele foi preservado; a resolução está em [TRABALHO_3_PARTE_3_Regressao_Logistica_SVM_RESOLVIDO.ipynb](Parte-3/TRABALHO_3_PARTE_3_Regressao_Logistica_SVM_RESOLVIDO.ipynb).
+
+A resolução inclui a codificação e remoção da classe `moderado`, os coeficientes da Regressão Logística, as duas previsões didáticas, os quatro kernels do SVM, o aumento de C e o ajuste com `GridSearchCV`. Todos os modelos são comparados na mesma divisão da Credit Data, com acurácia, precisão, recall, F1 e matrizes de confusão. A escolha dos hiperparâmetros usa validação cruzada somente no treino.
+
+Consulte [Parte-3/README.md](Parte-3/README.md) para os resultados, a execução e as observações sobre as referências numéricas do enunciado.
+
 ## Instalação
 
-Recomenda-se criar um ambiente virtual dentro da pasta do projeto.
+Recomenda-se criar um ambiente virtual dentro da pasta do projeto, com Python 3.11 ou superior. O requisito `pandas>=3.0` é necessário para ler o `StringArray` serializado no arquivo `risco_credito.pkl` fornecido.
 
 ### Windows — PowerShell
 
@@ -306,7 +322,13 @@ No Visual Studio Code, selecione o interpretador `.venv\Scripts\python.exe` por 
 .\.venv\Scripts\python.exe Parte-2\trabalho_3_parte_2_arvores_random_forest.py
 ```
 
-Também é possível abrir os arquivos `.ipynb` no Jupyter Notebook, Google Colab ou Visual Studio Code.
+### Parte 3 — Regressão Logística e SVM
+
+```powershell
+.\.venv\Scripts\python.exe Parte-3\trabalho_3_parte_3_regressao_logistica_svm.py
+```
+
+Também é possível abrir os arquivos `.ipynb` no Jupyter Notebook, Google Colab ou Visual Studio Code. Selecione o ambiente virtual com as dependências instaladas como kernel.
 
 ## Documentação de estudo
 
